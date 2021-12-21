@@ -1,0 +1,25 @@
+type Catalyst @entity {
+  id: ID!
+  domain: String!
+  owner: String!
+  isActive: Boolean!
+}
+
+type POI @entity {
+  id: ID!
+  coordinates: String!
+  isActive: Boolean!
+}
+
+type Name @entity {
+  id: ID!
+  name: String!
+  isActive: Boolean!
+}
+
+type Count @entity {
+  id: ID!
+  catalystTotal: Int!
+  poisTotal: Int!
+  namesTotal: Int!
+}
