@@ -16,7 +16,7 @@ export function handleAddName(event: Add): void {
 }
 
 
-export function handleThirdPartyUpdated(event: Remove): void {
+export function handleRemoveName(event: Remove): void {
   let name = Name.load(event.params._value)
   if (!name) {
     return

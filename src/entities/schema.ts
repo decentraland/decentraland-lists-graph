@@ -76,30 +76,32 @@ export class Catalyst extends Entity {
   }
 }
 
-export class POI extends Entity {
+export class Poi extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
 
     this.set("coordinates", Value.fromString(""));
+    this.set("x", Value.fromString(""));
+    this.set("y", Value.fromString(""));
     this.set("isActive", Value.fromBoolean(false));
   }
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save POI entity without an ID");
+    assert(id != null, "Cannot save Poi entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        "Cannot save POI entity with non-string ID. " +
+        "Cannot save Poi entity with non-string ID. " +
           'Considering using .toHex() to convert the "id" to a string.'
       );
-      store.set("POI", id.toString(), this);
+      store.set("Poi", id.toString(), this);
     }
   }
 
-  static load(id: string): POI | null {
-    return changetype<POI | null>(store.get("POI", id));
+  static load(id: string): Poi | null {
+    return changetype<Poi | null>(store.get("Poi", id));
   }
 
   get id(): string {
@@ -118,6 +120,24 @@ export class POI extends Entity {
 
   set coordinates(value: string) {
     this.set("coordinates", Value.fromString(value));
+  }
+
+  get x(): string {
+    let value = this.get("x");
+    return value!.toString();
+  }
+
+  set x(value: string) {
+    this.set("x", Value.fromString(value));
+  }
+
+  get y(): string {
+    let value = this.get("y");
+    return value!.toString();
+  }
+
+  set y(value: string) {
+    this.set("y", Value.fromString(value));
   }
 
   get isActive(): boolean {

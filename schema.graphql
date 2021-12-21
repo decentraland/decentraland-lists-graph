@@ -5,9 +5,11 @@ type Catalyst @entity {
   isActive: Boolean!
 }
 
-type POI @entity {
+type Poi @entity {
   id: ID!
   coordinates: String!
+  x: String!
+  y: String!
   isActive: Boolean!
 }
 

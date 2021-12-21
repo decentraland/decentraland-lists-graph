@@ -1,11 +1,13 @@
 import { Add, Remove } from '../entities/Name/List'
-import { POI } from '../entities/schema'
+import { Poi } from '../entities/schema'
 import { buildCountFromPOIs } from '../modules/Count'
 
-export function handleAddName(event: Add): void {
-  let poi = new POI(event.params._value)
+export function handleAddPOI(event: Add): void {
+  let poi = new Poi(event.params._value)
 
   poi.coordinates = event.params._value
+  poi.x = event.params._value.split(',')[0]
+  poi.y = event.params._value.split(',')[1]
   poi.isActive = true
 
   poi.save()
@@ -16,8 +18,8 @@ export function handleAddName(event: Add): void {
 }
 
 
-export function handleThirdPartyUpdated(event: Remove): void {
-  let poi = POI.load(event.params._value)
+export function handleRemovePOI(event: Remove): void {
+  let poi = Poi.load(event.params._value)
 
   if (!poi) {
     return

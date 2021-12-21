@@ -1,4 +1,4 @@
-# Decentraland TPR graph
+# Decentraland lists graph
 
 - Matic: https://thegraph.com/hosted-service/subgraph/decentraland/tpr-matic-mainnet
 - Mumbai: https://thegraph.com/hosted-service/subgraph/decentraland/tpr-matic-mumbai
@@ -22,22 +22,30 @@ Ethereum addresses should be passed lowercased:
 - `0xB549B2442b2BD0a53795BC5cDcBFE0cAF7ACA9f8` ❌
 - `0xb549b2442b2bd0a53795bc5cdcbfe0caf7aca9f8` ✅
 
-#### Get an item by URN
+#### Get active Catalyst, POIs or Names
 
 ```typescript
+// Catalysts
 {
-  items(where:{ urn: "urn"}) {
-    id
+  catalysts(where:{ isActive: true} ) {
+    domain
+    owner
   }
 }
-```
 
-#### Get an item by URN & contentHash
-
-```typescript
+// POIs
 {
-  items(where:{ urn: "urn", contentHash: "hash"}) {
-    id
+  pois(where:{ isActive: true}) {
+    coordinates
+    x
+    y
+  }
+}
+
+// Names
+{
+  names(where:{ isActive: true}) {
+    name
   }
 }
 ```
@@ -47,9 +55,9 @@ Ethereum addresses should be passed lowercased:
 ```typescript
 {
   counts {
-    tierTotal
-    thirdPartyTotal
-    itemTotal
+    catalystTotal
+    poisTotal
+    namesTotal
   }
 }
 ```
