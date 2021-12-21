@@ -27,7 +27,7 @@ Ethereum addresses should be passed lowercased:
 ```typescript
 // Catalysts
 {
-  catalysts(where:{ isActive: true} ) {
+  catalysts(where: {isActive: true}) {
     domain
     owner
   }
@@ -35,7 +35,7 @@ Ethereum addresses should be passed lowercased:
 
 // POIs
 {
-  pois(where:{ isActive: true}) {
+  pois(where: {isActive: true}) {
     coordinates
     x
     y
@@ -44,7 +44,7 @@ Ethereum addresses should be passed lowercased:
 
 // Names
 {
-  names(where:{ isActive: true}) {
+  names(where: {isActive: true}) {
     name
   }
 }
