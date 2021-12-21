@@ -1,7 +1,7 @@
 # Decentraland lists graph
 
-- Matic: https://thegraph.com/hosted-service/subgraph/decentraland/tpr-matic-mainnet
-- Mumbai: https://thegraph.com/hosted-service/subgraph/decentraland/tpr-matic-mumbai
+- Mainnet: https://thegraph.com/hosted-service/subgraph/decentraland/decentraland-lists-ethereum-mainnet
+- Ropsten: https://thegraph.com/hosted-service/subgraph/decentraland/decentraland-lists-ethereum-ropsten
 
 ### Install
 
