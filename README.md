@@ -1,7 +1,8 @@
 # Decentraland lists graph
 
-- Mainnet: https://thegraph.com/hosted-service/subgraph/decentraland/decentraland-lists-ethereum-mainnet
-- Ropsten: https://thegraph.com/hosted-service/subgraph/decentraland/decentraland-lists-ethereum-ropsten
+- Mainnet: https://thegraph.com/hosted-service/subgraph/decentraland/decentraland-lists-ethereum-mainnet (QmTBP7FEU1gHJaSev3wZsyoV47rV8hWdTpH1JnU2Krzycy)
+- Ropsten: https://thegraph.com/hosted-service/subgraph/decentraland/decentraland-lists-ethereum-ropsten (QmdZDDBGi4gyrSaJH8hCU493c1iQvMhAEyKSTDAoH4DHZ5)
+- Goerli: https://thegraph.com/hosted-service/subgraph/decentraland/decentraland-lists-ethereum-goerli (QmPNMrWGnkpikrEgDktwKZaFhhaZz2DLGLrSAhMZZdrsye)
 
 ### Install
 
