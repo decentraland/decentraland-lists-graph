@@ -6,7 +6,6 @@ import {
   Value,
   ValueKind,
   store,
-  Address,
   Bytes,
   BigInt,
   BigDecimal
@@ -16,10 +15,6 @@ export class Catalyst extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
-
-    this.set("domain", Value.fromString(""));
-    this.set("owner", Value.fromString(""));
-    this.set("isActive", Value.fromBoolean(false));
   }
 
   save(): void {
@@ -28,11 +23,14 @@ export class Catalyst extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        "Cannot save Catalyst entity with non-string ID. " +
-          'Considering using .toHex() to convert the "id" to a string.'
+        `Entities of type Catalyst must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
       store.set("Catalyst", id.toString(), this);
     }
+  }
+
+  static loadInBlock(id: string): Catalyst | null {
+    return changetype<Catalyst | null>(store.get_in_block("Catalyst", id));
   }
 
   static load(id: string): Catalyst | null {
@@ -41,7 +39,11 @@ export class Catalyst extends Entity {
 
   get id(): string {
     let value = this.get("id");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set id(value: string) {
@@ -50,7 +52,11 @@ export class Catalyst extends Entity {
 
   get domain(): string {
     let value = this.get("domain");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set domain(value: string) {
@@ -59,7 +65,11 @@ export class Catalyst extends Entity {
 
   get owner(): string {
     let value = this.get("owner");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set owner(value: string) {
@@ -68,7 +78,11 @@ export class Catalyst extends Entity {
 
   get isActive(): boolean {
     let value = this.get("isActive");
-    return value!.toBoolean();
+    if (!value || value.kind == ValueKind.NULL) {
+      return false;
+    } else {
+      return value.toBoolean();
+    }
   }
 
   set isActive(value: boolean) {
@@ -80,11 +94,6 @@ export class Poi extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
-
-    this.set("coordinates", Value.fromString(""));
-    this.set("x", Value.fromString(""));
-    this.set("y", Value.fromString(""));
-    this.set("isActive", Value.fromBoolean(false));
   }
 
   save(): void {
@@ -93,11 +102,14 @@ export class Poi extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        "Cannot save Poi entity with non-string ID. " +
-          'Considering using .toHex() to convert the "id" to a string.'
+        `Entities of type Poi must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
       store.set("Poi", id.toString(), this);
     }
+  }
+
+  static loadInBlock(id: string): Poi | null {
+    return changetype<Poi | null>(store.get_in_block("Poi", id));
   }
 
   static load(id: string): Poi | null {
@@ -106,7 +118,11 @@ export class Poi extends Entity {
 
   get id(): string {
     let value = this.get("id");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set id(value: string) {
@@ -115,7 +131,11 @@ export class Poi extends Entity {
 
   get coordinates(): string {
     let value = this.get("coordinates");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set coordinates(value: string) {
@@ -124,7 +144,11 @@ export class Poi extends Entity {
 
   get x(): string {
     let value = this.get("x");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set x(value: string) {
@@ -133,7 +157,11 @@ export class Poi extends Entity {
 
   get y(): string {
     let value = this.get("y");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set y(value: string) {
@@ -142,7 +170,11 @@ export class Poi extends Entity {
 
   get isActive(): boolean {
     let value = this.get("isActive");
-    return value!.toBoolean();
+    if (!value || value.kind == ValueKind.NULL) {
+      return false;
+    } else {
+      return value.toBoolean();
+    }
   }
 
   set isActive(value: boolean) {
@@ -154,9 +186,6 @@ export class Name extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
-
-    this.set("name", Value.fromString(""));
-    this.set("isActive", Value.fromBoolean(false));
   }
 
   save(): void {
@@ -165,11 +194,14 @@ export class Name extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        "Cannot save Name entity with non-string ID. " +
-          'Considering using .toHex() to convert the "id" to a string.'
+        `Entities of type Name must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
       store.set("Name", id.toString(), this);
     }
+  }
+
+  static loadInBlock(id: string): Name | null {
+    return changetype<Name | null>(store.get_in_block("Name", id));
   }
 
   static load(id: string): Name | null {
@@ -178,7 +210,11 @@ export class Name extends Entity {
 
   get id(): string {
     let value = this.get("id");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set id(value: string) {
@@ -187,7 +223,11 @@ export class Name extends Entity {
 
   get name(): string {
     let value = this.get("name");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set name(value: string) {
@@ -196,7 +236,11 @@ export class Name extends Entity {
 
   get isActive(): boolean {
     let value = this.get("isActive");
-    return value!.toBoolean();
+    if (!value || value.kind == ValueKind.NULL) {
+      return false;
+    } else {
+      return value.toBoolean();
+    }
   }
 
   set isActive(value: boolean) {
@@ -208,10 +252,6 @@ export class Count extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
-
-    this.set("catalystTotal", Value.fromI32(0));
-    this.set("poisTotal", Value.fromI32(0));
-    this.set("namesTotal", Value.fromI32(0));
   }
 
   save(): void {
@@ -220,11 +260,14 @@ export class Count extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        "Cannot save Count entity with non-string ID. " +
-          'Considering using .toHex() to convert the "id" to a string.'
+        `Entities of type Count must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
       store.set("Count", id.toString(), this);
     }
+  }
+
+  static loadInBlock(id: string): Count | null {
+    return changetype<Count | null>(store.get_in_block("Count", id));
   }
 
   static load(id: string): Count | null {
@@ -233,7 +276,11 @@ export class Count extends Entity {
 
   get id(): string {
     let value = this.get("id");
-    return value!.toString();
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
   }
 
   set id(value: string) {
@@ -242,7 +289,11 @@ export class Count extends Entity {
 
   get catalystTotal(): i32 {
     let value = this.get("catalystTotal");
-    return value!.toI32();
+    if (!value || value.kind == ValueKind.NULL) {
+      return 0;
+    } else {
+      return value.toI32();
+    }
   }
 
   set catalystTotal(value: i32) {
@@ -251,7 +302,11 @@ export class Count extends Entity {
 
   get poisTotal(): i32 {
     let value = this.get("poisTotal");
-    return value!.toI32();
+    if (!value || value.kind == ValueKind.NULL) {
+      return 0;
+    } else {
+      return value.toI32();
+    }
   }
 
   set poisTotal(value: i32) {
@@ -260,7 +315,11 @@ export class Count extends Entity {
 
   get namesTotal(): i32 {
     let value = this.get("namesTotal");
-    return value!.toI32();
+    if (!value || value.kind == ValueKind.NULL) {
+      return 0;
+    } else {
+      return value.toI32();
+    }
   }
 
   set namesTotal(value: i32) {
