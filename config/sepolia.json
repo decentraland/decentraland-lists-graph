@@ -1,9 +1,9 @@
 {
   "network": "sepolia",
-  "address_catalyst": "0x32b3bfddab3ffb719cb8316b65ab92786d06d6e7",
-  "startBlock_catalyst": 3831244,
-  "address_poi": "0x525a9423810de2cd6f12ed80c9e6694f371ee3aa",
-  "startBlock_poi": 3831248,
-  "address_name": "0x215b0d1d2c870719aeb8a2cce24d06ce16d741ec",
-  "startBlock_name": 3831250
+  "address_catalyst": "0x9b5091588a4bae0a5ea54a35af3c31f57a68ed37",
+  "startBlock_catalyst": 3870915,
+  "address_poi": "0xff7fcdbeaf0a5f2c408564036a9afaef9f38182d",
+  "startBlock_poi": 3870916,
+  "address_name": "0x6082b0b10b0fe9040652e35acbf3a22fe6764f27",
+  "startBlock_name": 3870913
 }
