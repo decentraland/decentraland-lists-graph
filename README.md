@@ -2,6 +2,7 @@
 
 - Mainnet: https://thegraph.com/hosted-service/subgraph/decentraland/decentraland-lists-ethereum-mainnet (QmTBP7FEU1gHJaSev3wZsyoV47rV8hWdTpH1JnU2Krzycy)
 - Ropsten: https://thegraph.com/hosted-service/subgraph/decentraland/decentraland-lists-ethereum-ropsten (QmdZDDBGi4gyrSaJH8hCU493c1iQvMhAEyKSTDAoH4DHZ5)
+- Sepolia: https://api.studio.thegraph.com/query/49472/lists-ethereum-mainnet/version/latest (QmQyDBMkGXZpubcKKnomnmDU2z5FhjCEuHr2FYhGS2esU2)
 - Goerli: https://thegraph.com/hosted-service/subgraph/decentraland/decentraland-lists-ethereum-goerli (QmPNMrWGnkpikrEgDktwKZaFhhaZz2DLGLrSAhMZZdrsye)
 
 ### Install

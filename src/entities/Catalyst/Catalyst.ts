@@ -92,6 +92,26 @@ export class Catalyst__catalystByIdResult {
     map.set("value4", ethereum.Value.fromUnsignedBigInt(this.value4));
     return map;
   }
+
+  getId(): Bytes {
+    return this.value0;
+  }
+
+  getOwner(): Address {
+    return this.value1;
+  }
+
+  getDomain(): string {
+    return this.value2;
+  }
+
+  getStartTime(): BigInt {
+    return this.value3;
+  }
+
+  getEndTime(): BigInt {
+    return this.value4;
+  }
 }
 
 export class Catalyst extends ethereum.SmartContract {
